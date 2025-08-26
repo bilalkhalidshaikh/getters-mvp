@@ -31,7 +31,7 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Heading */}
-        <div className="space-y-8">
+        <div className="space-y-8 mt-16">
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm text-primary mb-8">
             <Zap className="w-4 h-4 mr-2" />
             Next-Generation AI Agency
