@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Space_Grotesk } from "next/font/google"
 import { DM_Sans } from "next/font/google"
 import "./globals.css"
+import { LanguageProvider } from "@/components/language-provider"
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -45,7 +46,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`font-sans ${spaceGrotesk.variable} ${dmSans.variable} antialiased`}>{children}</body>
+      <body className={`font-sans ${spaceGrotesk.variable} ${dmSans.variable} antialiased`}>
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   )
 }

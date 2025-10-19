@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Servizi",
+    "caseStudies": "Case Study",
+    "about": "Chi Siamo",
+    "contact": "Contatti",
+    "audit": "Audit AI Gratuito"
+  },
+  "hero": {
+    "tagline": "Reimmaginiamo il domani con l'Intelligenza Artificiale Autonoma.",
+    "description": "Costruiamo sistemi intelligenti che pensano, decidono e agiscono. IA autonoma che scala il tuo business.",
+    "cta1": "Inizia Progetto",
+    "cta2": "Ottieni Audit AI Gratuito"
+  },
+  "services": {
+    "title": "Sistemi Autonomi che Generano Risultati",
+    "subtitle": "Soluzioni intelligenti progettate per la scala enterprise",
+    "items": [
+      {
+        "title": "Sviluppo Agenti AI",
+        "description": "Agenti AI autonomi personalizzati che pensano, decidono e agiscono."
+      },
+      {
+        "title": "Automazione Processi",
+        "description": "Elimina il lavoro manuale attraverso flussi di lavoro intelligenti."
+      },
+      {
+        "title": "Dati e Analytics",
+        "description": "Trasforma i dati in intelligenza predittiva e azionabile."
+      },
+      {
+        "title": "Ingegneria Full-Stack",
+        "description": "Sistemi web e app scalabili per il tuo business guidato da IA."
+      },
+      {
+        "title": "Soluzioni Creative AI",
+        "description": "IA che crea, progetta e personalizza esperienze di brand."
+      }
+    ]
+  },
+  "industries": {
+    "title": "Settori che Potenziamo",
+    "subtitle": "Trasformazione dei settori attraverso l'automazione intelligente",
+    "items": [
+      {
+        "name": "FinTech",
+        "description": "Trading autonomo, analisi del rischio e sistemi di conformità"
+      },
+      {
+        "name": "E-commerce",
+        "description": "Motori di personalizzazione e ottimizzazione dell'inventario"
+      },
+      {
+        "name": "Healthcare",
+        "description": "IA diagnostica e gestione dati pazienti"
+      },
+      {
+        "name": "SaaS",
+        "description": "Automazione intelligente e customer intelligence"
+      },
+      {
+        "name": "Manifattura",
+        "description": "Manutenzione predittiva e ottimizzazione della produzione"
+      }
+    ]
+  },
+  "caseStudies": {
+    "title": "Risultati che Parlano",
+    "subtitle": "Risultati reali da clienti reali",
+    "viewAll": "Visualizza Tutti i Case Study",
+    "items": [
+      {
+        "title": "Retailer Moda",
+        "metric": "+65%",
+        "description": "Aumento del tasso di conversione attraverso personalizzazione AI"
+      },
+      {
+        "title": "Startup FinTech",
+        "metric": "-90%",
+        "description": "Riduzione del tempo di elaborazione con flussi di lavoro autonomi"
+      },
+      {
+        "title": "Rete Healthcare",
+        "metric": "-70%",
+        "description": "Sovraccarico amministrativo eliminato attraverso IA"
+      }
+    ]
+  },
+  "audit": {
+    "title": "Ottieni il Tuo Audit AI Gratuito",
+    "subtitle": "Scopri come l'IA autonoma può trasformare il tuo business",
+    "form": {
+      "name": "Nome Completo",
+      "email": "Indirizzo Email",
+      "company": "Nome Azienda",
+      "projectType": "Tipo di Progetto",
+      "details": "Raccontaci del tuo progetto",
+      "submit": "Ottieni Audit Gratuito"
+    }
+  },
+  "about": {
+    "title": "Chi Siamo",
+    "mission": "Ridefinire le aziende europee attraverso sistemi di IA autonoma.",
+    "values": ["Intelligenza", "Eleganza", "Precisione", "Fiducia"]
+  },
+  "contact": {
+    "title": "Contattaci",
+    "email": "hello@getters.ai",
+    "locations": [
+      {
+        "city": "Milano",
+        "country": "Italia",
+        "address": "Via della Moscova, Milano"
+      },
+      {
+        "city": "Karachi",
+        "country": "Pakistan",
+        "address": "Remote Operations HQ"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Non creiamo strumenti. Creiamo intelligenza.",
+    "newsletter": "Iscriviti alla nostra newsletter",
+    "subscribe": "Iscriviti",
+    "privacy": "Politica sulla Privacy",
+    "terms": "Termini di Servizio"
+  }
+}

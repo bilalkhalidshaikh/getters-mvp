@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "caseStudies": "Case Studies",
+    "about": "About",
+    "contact": "Contact",
+    "audit": "Free AI Audit"
+  },
+  "hero": {
+    "tagline": "We reimagine tomorrow with Autonomous AI.",
+    "description": "Building intelligent systems that think, decide, and act. Autonomous AI that scales your business.",
+    "cta1": "Start Project",
+    "cta2": "Get Free AI Audit"
+  },
+  "services": {
+    "title": "Autonomous Systems That Drive Results",
+    "subtitle": "Intelligent solutions engineered for enterprise scale",
+    "items": [
+      {
+        "title": "AI Agent Development",
+        "description": "Custom autonomous AI agents that think, decide, and act."
+      },
+      {
+        "title": "Process Automation",
+        "description": "Eliminate manual work through intelligent workflows."
+      },
+      {
+        "title": "Data & Analytics",
+        "description": "Turn data into predictive, actionable intelligence."
+      },
+      {
+        "title": "Full-Stack Engineering",
+        "description": "Scalable web and app systems for your AI-driven business."
+      },
+      {
+        "title": "Creative AI Solutions",
+        "description": "AI that creates, designs, and personalizes brand experiences."
+      }
+    ]
+  },
+  "industries": {
+    "title": "Industries We Empower",
+    "subtitle": "Transforming sectors through intelligent automation",
+    "items": [
+      {
+        "name": "FinTech",
+        "description": "Autonomous trading, risk analysis, and compliance systems"
+      },
+      {
+        "name": "E-commerce",
+        "description": "Personalization engines and inventory optimization"
+      },
+      {
+        "name": "Healthcare",
+        "description": "Diagnostic AI and patient data management"
+      },
+      {
+        "name": "SaaS",
+        "description": "Intelligent automation and customer intelligence"
+      },
+      {
+        "name": "Manufacturing",
+        "description": "Predictive maintenance and production optimization"
+      }
+    ]
+  },
+  "caseStudies": {
+    "title": "Results That Speak",
+    "subtitle": "Real outcomes from real clients",
+    "viewAll": "View All Case Studies",
+    "items": [
+      {
+        "title": "Fashion Retailer",
+        "metric": "+65%",
+        "description": "Conversion rate increase through AI personalization"
+      },
+      {
+        "title": "FinTech Startup",
+        "metric": "-90%",
+        "description": "Processing time reduction with autonomous workflows"
+      },
+      {
+        "title": "Healthcare Network",
+        "metric": "-70%",
+        "description": "Administrative overhead eliminated through AI"
+      }
+    ]
+  },
+  "audit": {
+    "title": "Get Your Free AI Audit",
+    "subtitle": "Discover how autonomous AI can transform your business",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "company": "Company Name",
+      "projectType": "Project Type",
+      "details": "Tell us about your project",
+      "submit": "Get Free Audit"
+    }
+  },
+  "about": {
+    "title": "About Getters",
+    "mission": "To redefine European businesses through autonomous AI systems.",
+    "values": ["Intelligence", "Elegance", "Precision", "Trust"]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "email": "hello@getters.ai",
+    "locations": [
+      {
+        "city": "Milan",
+        "country": "Italy",
+        "address": "Via della Moscova, Milan"
+      },
+      {
+        "city": "Karachi",
+        "country": "Pakistan",
+        "address": "Remote Operations HQ"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "We don't build tools. We build intelligence.",
+    "newsletter": "Subscribe to our newsletter",
+    "subscribe": "Subscribe",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
