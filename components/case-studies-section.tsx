@@ -3,7 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, TrendingUp, Target } from 'lucide-react'
+import { ArrowRight, TrendingUp, Target } from "lucide-react"
 import { useLanguageContext } from "@/components/language-provider"
 
 export function CaseStudiesSection() {
@@ -36,7 +36,8 @@ export function CaseStudiesSection() {
     },
     {
       challenge: "Overwhelmed staff spending 60% of time on administrative tasks instead of patient care",
-      solution: "Implemented AI-powered virtual assistants for appointment scheduling, patient triage, and documentation",
+      solution:
+        "Implemented AI-powered virtual assistants for appointment scheduling, patient triage, and documentation",
       results: [
         { metric: "-70%", label: "Admin Time Reduction" },
         { metric: "+45%", label: "Patient Satisfaction Increase" },
@@ -51,7 +52,7 @@ export function CaseStudiesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-[#C9A86A]/10 border border-[#C9A86A]/30 rounded-full text-sm text-[#C9A86A] mb-6 backdrop-blur-sm">
+          <div className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-primary mb-6 backdrop-blur-sm">
             <Target className="w-4 h-4 mr-2" />
             {translations.caseStudies?.title || "Case Studies"}
           </div>
@@ -68,10 +69,9 @@ export function CaseStudiesSection() {
           {caseStudies.map((study: any, index: number) => (
             <Card
               key={index}
-              className="group relative overflow-hidden border-[#C9A86A]/20 bg-card/40 backdrop-blur-sm hover:bg-card/70 transition-all duration-500 hover:border-[#C9A86A]/40"
+              className="group relative overflow-hidden border-primary/20 bg-card/40 backdrop-blur-sm hover:bg-card/70 transition-all duration-500 hover:border-primary/40"
             >
-              {/* Background Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#C9A86A]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               <div className="relative p-8 lg:p-12">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
@@ -80,30 +80,26 @@ export function CaseStudiesSection() {
                     <div>
                       <div className="flex items-center gap-3 mb-4 flex-wrap">
                         <h3 className="text-2xl font-bold text-foreground">{study.title}</h3>
-                        <Badge variant="outline" className="text-xs border-[#C9A86A]/30 text-[#C9A86A]">
+                        <Badge variant="outline" className="text-xs border-primary/30 text-primary">
                           {study.metric}
                         </Badge>
                       </div>
 
                       <div className="space-y-4">
                         <div>
-                          <h4 className="font-semibold text-[#C9A86A] mb-2 flex items-center">
-                            <div className="w-2 h-2 bg-[#C9A86A] rounded-full mr-2"></div>
+                          <h4 className="font-semibold text-primary mb-2 flex items-center">
+                            <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
                             Challenge
                           </h4>
-                          <p className="text-muted-foreground leading-relaxed">
-                            {caseStudiesData[index]?.challenge}
-                          </p>
+                          <p className="text-muted-foreground leading-relaxed">{caseStudiesData[index]?.challenge}</p>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-[#C9A86A] mb-2 flex items-center">
-                            <div className="w-2 h-2 bg-[#C9A86A] rounded-full mr-2"></div>
+                          <h4 className="font-semibold text-primary mb-2 flex items-center">
+                            <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
                             Solution
                           </h4>
-                          <p className="text-muted-foreground leading-relaxed">
-                            {caseStudiesData[index]?.solution}
-                          </p>
+                          <p className="text-muted-foreground leading-relaxed">{caseStudiesData[index]?.solution}</p>
                         </div>
                       </div>
                     </div>
@@ -116,7 +112,7 @@ export function CaseStudiesSection() {
                           <Badge
                             key={techIndex}
                             variant="secondary"
-                            className="bg-[#C9A86A]/10 text-[#C9A86A] border-[#C9A86A]/20 hover:bg-[#C9A86A]/20"
+                            className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20"
                           >
                             {tech}
                           </Badge>
@@ -128,7 +124,7 @@ export function CaseStudiesSection() {
                   {/* Results */}
                   <div className="space-y-6">
                     <h4 className="font-semibold text-foreground flex items-center">
-                      <TrendingUp className="w-5 h-5 mr-2 text-[#C9A86A]" />
+                      <TrendingUp className="w-5 h-5 mr-2 text-primary" />
                       Results Achieved
                     </h4>
 
@@ -136,9 +132,9 @@ export function CaseStudiesSection() {
                       {caseStudiesData[index]?.results.map((result: any, resultIndex: number) => (
                         <div
                           key={resultIndex}
-                          className="p-4 bg-[#C9A86A]/5 border border-[#C9A86A]/20 rounded-lg hover:bg-[#C9A86A]/10 transition-colors"
+                          className="p-4 bg-primary/5 border border-primary/20 rounded-lg hover:bg-primary/10 transition-colors"
                         >
-                          <div className="text-2xl font-bold text-[#C9A86A] mb-1">{result.metric}</div>
+                          <div className="text-2xl font-bold text-primary mb-1">{result.metric}</div>
                           <div className="text-sm text-muted-foreground">{result.label}</div>
                         </div>
                       ))}
@@ -146,7 +142,7 @@ export function CaseStudiesSection() {
 
                     <Button
                       variant="outline"
-                      className="w-full border-[#C9A86A]/30 hover:bg-[#C9A86A]/10 hover:border-[#C9A86A]/50 group-hover:scale-105 transition-all duration-300 bg-transparent text-foreground"
+                      className="w-full border-primary/30 hover:bg-primary/10 hover:border-primary/50 group-hover:scale-105 transition-all duration-300 bg-transparent text-foreground"
                     >
                       View Full Case Study
                       <ArrowRight className="ml-2 w-4 h-4" />
@@ -162,7 +158,7 @@ export function CaseStudiesSection() {
         <div className="text-center mt-16">
           <Button
             size="lg"
-            className="bg-[#C9A86A] hover:bg-[#C9A86A]/90 text-background font-medium px-8 py-4 transition-all duration-200 shadow-lg hover:shadow-[#C9A86A]/50 hover:shadow-xl"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8 py-4 transition-all duration-200 shadow-lg hover:shadow-primary/50 hover:shadow-xl"
           >
             {translations.caseStudies?.viewAll || "See All Case Studies"}
             <ArrowRight className="ml-2 w-5 h-5" />

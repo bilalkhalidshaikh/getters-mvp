@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Bot, Code, BarChart3, Workflow, Palette, ArrowRight, Sparkles } from 'lucide-react'
+import { Bot, Code, BarChart3, Workflow, Palette, ArrowRight, Sparkles } from "lucide-react"
 import { useLanguageContext } from "@/components/language-provider"
 
 export function ServicesSection() {
@@ -29,7 +29,7 @@ export function ServicesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-[#C9A86A]/10 border border-[#C9A86A]/30 rounded-full text-sm text-[#C9A86A] mb-6 backdrop-blur-sm">
+          <div className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-primary mb-6 backdrop-blur-sm">
             <Sparkles className="w-4 h-4 mr-2" />
             {translations.services?.title || "Our Services"}
           </div>
@@ -48,21 +48,20 @@ export function ServicesSection() {
             return (
               <Card
                 key={index}
-                className="group relative overflow-hidden border-[#C9A86A]/20 bg-card/40 backdrop-blur-sm hover:bg-card/70 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#C9A86A]/20 hover:border-[#C9A86A]/40"
+                className="group relative overflow-hidden border-primary/20 bg-card/40 backdrop-blur-sm hover:bg-card/70 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/40"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#C9A86A]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 <CardHeader className="relative">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="p-3 rounded-lg bg-gradient-to-br from-[#C9A86A] to-[#C9A86A]/60 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-[#C9A86A]/30">
-                      <Icon className="w-6 h-6 text-background" />
+                    <div className="p-3 rounded-lg bg-gradient-to-br from-primary to-primary/60 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-primary/30">
+                      <Icon className="w-6 h-6 text-primary-foreground" />
                     </div>
-                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-[#C9A86A] group-hover:translate-x-1 transition-all duration-300" />
+                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
                   </div>
-                  <CardTitle className="text-xl group-hover:text-[#C9A86A] transition-colors duration-300">
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </CardTitle>
                   <CardDescription className="text-muted-foreground leading-relaxed">
@@ -76,7 +75,7 @@ export function ServicesSection() {
                       <Badge
                         key={featureIndex}
                         variant="secondary"
-                        className="text-xs bg-[#C9A86A]/10 text-[#C9A86A] border-[#C9A86A]/20 hover:bg-[#C9A86A]/20 transition-colors"
+                        className="text-xs bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors"
                       >
                         {feature}
                       </Badge>
@@ -91,7 +90,7 @@ export function ServicesSection() {
         {/* Industries Section */}
         <div className="mt-32">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-[#C9A86A]/10 border border-[#C9A86A]/30 rounded-full text-sm text-[#C9A86A] mb-6 backdrop-blur-sm">
+            <div className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-primary mb-6 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 mr-2" />
               {translations.industries?.title || "Industries"}
             </div>
@@ -107,11 +106,11 @@ export function ServicesSection() {
             {translations.industries?.items?.map((industry: any, index: number) => (
               <Card
                 key={index}
-                className="group relative overflow-hidden border-[#C9A86A]/20 bg-card/40 backdrop-blur-sm hover:bg-card/70 transition-all duration-300 hover:scale-105 hover:border-[#C9A86A]/40 p-6 flex flex-col justify-center items-center text-center"
+                className="group relative overflow-hidden border-primary/20 bg-card/40 backdrop-blur-sm hover:bg-card/70 transition-all duration-300 hover:scale-105 hover:border-primary/40 p-6 flex flex-col justify-center items-center text-center"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#C9A86A]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-foreground group-hover:text-[#C9A86A] transition-colors duration-300 mb-2">
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 mb-2">
                     {industry.name}
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-muted-foreground transition-colors">
@@ -128,7 +127,7 @@ export function ServicesSection() {
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <Button
               size="lg"
-              className="bg-[#C9A86A] hover:bg-[#C9A86A]/90 text-background font-medium px-8 py-4 transition-all duration-200 shadow-lg hover:shadow-[#C9A86A]/50 hover:shadow-xl"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8 py-4 transition-all duration-200 shadow-lg hover:shadow-primary/50 hover:shadow-xl"
             >
               Discuss Your Project
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -136,7 +135,7 @@ export function ServicesSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-[#C9A86A]/30 hover:bg-[#C9A86A]/10 hover:border-[#C9A86A]/50 px-8 py-4 bg-transparent text-foreground transition-all duration-200"
+              className="border-primary/30 hover:bg-primary/10 hover:border-primary/50 px-8 py-4 bg-transparent text-foreground transition-all duration-200"
             >
               View All Services
             </Button>

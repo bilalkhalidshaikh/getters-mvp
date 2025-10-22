@@ -112,11 +112,6 @@
         "city": "Milano",
         "country": "Italia",
         "address": "Via della Moscova, Milano"
-      },
-      {
-        "city": "Karachi",
-        "country": "Pakistan",
-        "address": "Remote Operations HQ"
       }
     ]
   },

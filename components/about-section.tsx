@@ -38,7 +38,7 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-[#C9A86A]/10 border border-[#C9A86A]/30 rounded-full text-sm text-[#C9A86A] mb-6 backdrop-blur-sm">
+          <div className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-primary mb-6 backdrop-blur-sm">
             <Sparkles className="w-4 h-4 mr-2" />
             {translations.about?.title || "About Getters"}
           </div>
@@ -53,7 +53,7 @@ export function AboutSection() {
 
         {/* Mission & Vision */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          <Card className="border-[#C9A86A]/20 bg-card/40 backdrop-blur-sm">
+          <Card className="border-primary/20 bg-card/40 backdrop-blur-sm">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -63,7 +63,7 @@ export function AboutSection() {
             </CardContent>
           </Card>
 
-          <Card className="border-[#C9A86A]/20 bg-card/40 backdrop-blur-sm">
+          <Card className="border-primary/20 bg-card/40 backdrop-blur-sm">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -83,11 +83,11 @@ export function AboutSection() {
               return (
                 <Card
                   key={index}
-                  className="group border-[#C9A86A]/20 bg-card/40 backdrop-blur-sm hover:bg-card/70 hover:border-[#C9A86A]/40 transition-all duration-300"
+                  className="group border-primary/20 bg-card/40 backdrop-blur-sm hover:bg-card/70 hover:border-primary/40 transition-all duration-300"
                 >
                   <CardContent className="p-6">
-                    <div className="p-3 rounded-lg bg-gradient-to-br from-[#C9A86A] to-[#C9A86A]/60 w-fit mb-4 group-hover:scale-110 transition-transform">
-                      <Icon className="w-6 h-6 text-background" />
+                    <div className="p-3 rounded-lg bg-gradient-to-br from-primary to-primary/60 w-fit mb-4 group-hover:scale-110 transition-transform">
+                      <Icon className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <h4 className="text-lg font-bold text-foreground mb-2">{value.title}</h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
@@ -98,24 +98,15 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Team Locations */}
-        <div className="bg-gradient-to-r from-[#C9A86A]/10 to-transparent border border-[#C9A86A]/20 rounded-lg p-8 md:p-12">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">Global Presence, Local Expertise</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="text-center">
-              <h4 className="text-xl font-bold text-foreground mb-2">Milan, Italy</h4>
-              <p className="text-muted-foreground mb-4">
-                Our creative and strategic hub, where European innovation meets AI excellence.
-              </p>
-              <Badge className="bg-[#C9A86A]/20 text-[#C9A86A] border-[#C9A86A]/30">Primary Office</Badge>
-            </div>
-            <div className="text-center">
-              <h4 className="text-xl font-bold text-foreground mb-2">Karachi, Pakistan</h4>
-              <p className="text-muted-foreground mb-4">
-                Our engineering and operations center, delivering world-class technical excellence.
-              </p>
-              <Badge className="bg-[#C9A86A]/20 text-[#C9A86A] border-[#C9A86A]/30">Operations Hub</Badge>
-            </div>
+        <div className="bg-gradient-to-r from-primary/10 to-transparent border border-primary/20 rounded-lg p-8 md:p-12">
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">Based in Milan, Europe</h3>
+          <div className="text-center">
+            <h4 className="text-xl font-bold text-foreground mb-2">Milan, Italy</h4>
+            <p className="text-muted-foreground mb-4 max-w-2xl mx-auto">
+              Our headquarters and creative hub, where European innovation meets cutting-edge AI excellence. We serve
+              clients across Europe and globally with world-class autonomous AI solutions.
+            </p>
+            <Badge className="bg-primary/20 text-primary border-primary/30">European Headquarters</Badge>
           </div>
         </div>
       </div>

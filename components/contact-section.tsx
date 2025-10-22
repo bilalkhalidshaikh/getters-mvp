@@ -71,7 +71,7 @@ export function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-[#C9A86A]/10 border border-[#C9A86A]/30 rounded-full text-sm text-[#C9A86A] mb-6 backdrop-blur-sm">
+          <div className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-primary mb-6 backdrop-blur-sm">
             <Sparkles className="w-4 h-4 mr-2" />
             {translations.audit?.title || "Get Started"}
           </div>
@@ -87,7 +87,7 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="border-[#C9A86A]/20 bg-card/40 backdrop-blur-sm">
+            <Card className="border-primary/20 bg-card/40 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-2xl">{translations.audit?.title || "Start Your AI Journey"}</CardTitle>
                 <CardDescription>
@@ -97,7 +97,7 @@ export function ContactSection() {
               <CardContent>
                 {submitted ? (
                   <div className="flex flex-col items-center justify-center py-12 text-center">
-                    <CheckCircle className="w-16 h-16 text-[#C9A86A] mb-4" />
+                    <CheckCircle className="w-16 h-16 text-primary mb-4" />
                     <h3 className="text-xl font-bold text-foreground mb-2">Thank You!</h3>
                     <p className="text-muted-foreground">
                       We've received your request. Our team will contact you within 24 hours.
@@ -117,7 +117,7 @@ export function ContactSection() {
                           onChange={handleInputChange}
                           placeholder="John Doe"
                           required
-                          className="bg-background/50 border-[#C9A86A]/20 focus:border-[#C9A86A]/50 focus:ring-[#C9A86A]/20"
+                          className="bg-background/50 border-primary/20 focus:border-primary/50 focus:ring-primary/20"
                         />
                       </div>
                       <div>
@@ -132,7 +132,7 @@ export function ContactSection() {
                           onChange={handleInputChange}
                           placeholder="john@company.com"
                           required
-                          className="bg-background/50 border-[#C9A86A]/20 focus:border-[#C9A86A]/50 focus:ring-[#C9A86A]/20"
+                          className="bg-background/50 border-primary/20 focus:border-primary/50 focus:ring-primary/20"
                         />
                       </div>
                     </div>
@@ -147,7 +147,7 @@ export function ContactSection() {
                         value={formData.company}
                         onChange={handleInputChange}
                         placeholder="Your Company"
-                        className="bg-background/50 border-[#C9A86A]/20 focus:border-[#C9A86A]/50 focus:ring-[#C9A86A]/20"
+                        className="bg-background/50 border-primary/20 focus:border-primary/50 focus:ring-primary/20"
                       />
                     </div>
 
@@ -162,8 +162,8 @@ export function ContactSection() {
                             variant={formData.projectType === type ? "default" : "outline"}
                             className={`cursor-pointer transition-all duration-200 ${
                               formData.projectType === type
-                                ? "bg-[#C9A86A] text-background border-[#C9A86A]"
-                                : "border-[#C9A86A]/20 hover:bg-[#C9A86A]/10 hover:border-[#C9A86A]/40 text-foreground"
+                                ? "bg-primary text-primary-foreground border-primary"
+                                : "border-primary/20 hover:bg-primary/10 hover:border-primary/40 text-foreground"
                             }`}
                             onClick={() => setFormData((prev) => ({ ...prev, projectType: type }))}
                           >
@@ -185,14 +185,14 @@ export function ContactSection() {
                         placeholder="Tell us about your project, challenges, and goals..."
                         rows={4}
                         required
-                        className="bg-background/50 border-[#C9A86A]/20 focus:border-[#C9A86A]/50 focus:ring-[#C9A86A]/20 resize-none"
+                        className="bg-background/50 border-primary/20 focus:border-primary/50 focus:ring-primary/20 resize-none"
                       />
                     </div>
 
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-[#C9A86A] hover:bg-[#C9A86A]/90 text-background font-medium transition-all duration-200 shadow-lg hover:shadow-[#C9A86A]/50 hover:shadow-xl"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-all duration-200 shadow-lg hover:shadow-primary/50 hover:shadow-xl"
                     >
                       {translations.audit?.form?.submit || "Get Free Audit"}
                       <Send className="ml-2 w-5 h-5" />
@@ -206,15 +206,15 @@ export function ContactSection() {
           {/* Contact Info & Benefits */}
           <div className="space-y-6">
             {/* Contact Information */}
-            <Card className="border-[#C9A86A]/20 bg-card/40 backdrop-blur-sm">
+            <Card className="border-primary/20 bg-card/40 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-xl">{translations.contact?.title || "Get in Touch"}</CardTitle>
                 <CardDescription>Multiple ways to reach our team</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-[#C9A86A]/10 rounded-lg">
-                    <Mail className="w-5 h-5 text-[#C9A86A]" />
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
@@ -222,8 +222,8 @@ export function ContactSection() {
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-[#C9A86A]/10 rounded-lg">
-                    <MapPin className="w-5 h-5 text-[#C9A86A]" />
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="font-medium">{translations.contact?.locations?.[0]?.city || "Milan"}</p>
@@ -232,42 +232,31 @@ export function ContactSection() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-[#C9A86A]/10 rounded-lg">
-                    <MapPin className="w-5 h-5 text-[#C9A86A]" />
-                  </div>
-                  <div>
-                    <p className="font-medium">{translations.contact?.locations?.[1]?.city || "Karachi"}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {translations.contact?.locations?.[1]?.address || "Remote Operations HQ"}
-                    </p>
-                  </div>
-                </div>
               </CardContent>
             </Card>
 
             {/* What to Expect */}
-            <Card className="border-[#C9A86A]/20 bg-card/40 backdrop-blur-sm">
+            <Card className="border-primary/20 bg-card/40 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-xl">What to Expect</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-[#C9A86A] mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="font-medium">24-Hour Response</p>
                     <p className="text-sm text-muted-foreground">We'll get back to you within one business day</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-[#C9A86A] mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="font-medium">Free Consultation</p>
                     <p className="text-sm text-muted-foreground">30-minute strategy session at no cost</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-[#C9A86A] mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="font-medium">Custom Proposal</p>
                     <p className="text-sm text-muted-foreground">Tailored solution with clear timeline and pricing</p>
@@ -277,13 +266,13 @@ export function ContactSection() {
             </Card>
 
             {/* Quick CTA */}
-            <Card className="border-[#C9A86A]/20 bg-gradient-to-br from-[#C9A86A]/10 to-[#C9A86A]/5">
+            <Card className="border-primary/20 bg-gradient-to-br from-primary/10 to-primary/5">
               <CardContent className="p-6 text-center">
                 <h3 className="font-bold text-lg mb-2">Need Immediate Help?</h3>
                 <p className="text-sm text-muted-foreground mb-4">Schedule a call directly with our AI strategy team</p>
                 <Button
                   variant="outline"
-                  className="w-full border-[#C9A86A]/30 hover:bg-[#C9A86A]/10 hover:border-[#C9A86A]/50 bg-transparent text-foreground"
+                  className="w-full border-primary/30 hover:bg-primary/10 hover:border-primary/50 bg-transparent text-foreground"
                 >
                   Book Strategy Call
                   <ArrowRight className="ml-2 w-4 h-4" />

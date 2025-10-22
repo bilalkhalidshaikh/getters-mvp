@@ -17,29 +17,6 @@ export function Footer() {
 
   if (!isLoaded) return null
 
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault()
-    try {
-      await fetch("https://formsubmit.co/hello@getters.ai", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          subject: "Newsletter Subscription",
-          email: email,
-          message: "New newsletter subscriber",
-        }),
-      })
-      setSubscribed(true)
-      setEmail("")
-      setTimeout(() => setSubscribed(false), 3000)
-    } catch (error) {
-      console.error("Subscription error:", error)
-    }
-  }
-
   const footerLinks = {
     Services: [
       { name: "AI Agent Development", href: "#services" },
@@ -70,8 +47,31 @@ export function Footer() {
     ],
   }
 
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+    try {
+      await fetch("https://formsubmit.co/hello@getters.ai", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          subject: "Newsletter Subscription",
+          email: email,
+          message: "New newsletter subscriber",
+        }),
+      })
+      setSubscribed(true)
+      setEmail("")
+      setTimeout(() => setSubscribed(false), 3000)
+    } catch (error) {
+      console.error("Subscription error:", error)
+    }
+  }
+
   return (
-    <footer className="bg-card/20 border-t border-[#C9A86A]/20">
+    <footer className="bg-background border-t border-primary/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
@@ -87,7 +87,7 @@ export function Footer() {
                     height={40}
                     className="w-10 h-10 transition-transform group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#C9A86A]/20 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <span className="text-xl font-bold text-foreground">Getters</span>
               </Link>
@@ -97,26 +97,18 @@ export function Footer() {
                   "We don't build tools. We build intelligence. Autonomous AI systems that drive revenue and eliminate operational waste."}
               </p>
 
-              {/* Contact Info */}
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-sm">
-                  <Mail className="w-4 h-4 text-[#C9A86A]" />
-                  <span className="text-muted-foreground hover:text-[#C9A86A] transition-colors">
+                  <Mail className="w-4 h-4 text-primary" />
+                  <span className="text-muted-foreground hover:text-primary transition-colors">
                     {translations.contact?.email || "hello@getters.ai"}
                   </span>
                 </div>
                 <div className="flex items-center space-x-3 text-sm">
-                  <MapPin className="w-4 h-4 text-[#C9A86A]" />
+                  <MapPin className="w-4 h-4 text-primary" />
                   <span className="text-muted-foreground">
                     {translations.contact?.locations?.[0]?.city || "Milan"},{" "}
                     {translations.contact?.locations?.[0]?.country || "Italy"}
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3 text-sm">
-                  <MapPin className="w-4 h-4 text-[#C9A86A]" />
-                  <span className="text-muted-foreground">
-                    {translations.contact?.locations?.[1]?.city || "Karachi"},{" "}
-                    {translations.contact?.locations?.[1]?.country || "Pakistan"}
                   </span>
                 </div>
               </div>
@@ -126,32 +118,32 @@ export function Footer() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="p-2 hover:bg-[#C9A86A]/10 hover:text-[#C9A86A] transition-colors"
+                  className="p-2 hover:bg-primary/10 hover:text-primary transition-colors"
                 >
                   <Linkedin className="w-4 h-4" />
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="p-2 hover:bg-[#C9A86A]/10 hover:text-[#C9A86A] transition-colors"
+                  className="p-2 hover:bg-primary/10 hover:text-primary transition-colors"
                 >
                   <Twitter className="w-4 h-4" />
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="p-2 hover:bg-[#C9A86A]/10 hover:text-[#C9A86A] transition-colors"
+                  className="p-2 hover:bg-primary/10 hover:text-primary transition-colors"
                 >
                   <Github className="w-4 h-4" />
                 </Button>
               </div>
 
               {/* Language Toggle */}
-              <div className="flex space-x-2 pt-4 border-t border-[#C9A86A]/20">
+              <div className="flex space-x-2 pt-4 border-t border-primary/10">
                 <button
                   onClick={() => switchLanguage("en")}
                   className={`px-3 py-1 rounded text-xs font-medium transition-all ${
-                    language === "en" ? "bg-[#C9A86A]/20 text-[#C9A86A]" : "text-muted-foreground hover:text-foreground"
+                    language === "en" ? "bg-primary/20 text-primary" : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   EN
@@ -159,7 +151,7 @@ export function Footer() {
                 <button
                   onClick={() => switchLanguage("it")}
                   className={`px-3 py-1 rounded text-xs font-medium transition-all ${
-                    language === "it" ? "bg-[#C9A86A]/20 text-[#C9A86A]" : "text-muted-foreground hover:text-foreground"
+                    language === "it" ? "bg-primary/20 text-primary" : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   IT
@@ -178,7 +170,7 @@ export function Footer() {
                         <li key={link.name}>
                           <Link
                             href={link.href}
-                            className="text-sm text-muted-foreground hover:text-[#C9A86A] transition-colors duration-200"
+                            className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                           >
                             {link.name}
                           </Link>
@@ -193,7 +185,7 @@ export function Footer() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="py-8 border-t border-[#C9A86A]/20">
+        <div className="py-8 border-t border-primary/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="font-semibold text-foreground mb-2">
@@ -212,12 +204,12 @@ export function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-1 md:w-64 px-3 py-2 bg-background border border-[#C9A86A]/20 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A86A]/50 focus:border-[#C9A86A]/50 transition-all"
+                className="flex-1 md:w-64 px-3 py-2 bg-card border border-primary/20 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all"
               />
               <Button
                 type="submit"
                 size="sm"
-                className="bg-[#C9A86A] hover:bg-[#C9A86A]/90 text-background font-medium shrink-0 transition-all duration-200 shadow-lg hover:shadow-[#C9A86A]/50"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium shrink-0 transition-all duration-200 shadow-lg hover:shadow-primary/50"
               >
                 {subscribed ? "Subscribed!" : translations.footer?.subscribe || "Subscribe"}
                 <ArrowRight className="ml-2 w-4 h-4" />
@@ -226,7 +218,7 @@ export function Footer() {
           </div>
         </div>
 
-        <Separator className="bg-[#C9A86A]/20" />
+        <Separator className="bg-primary/10" />
 
         {/* Bottom Footer */}
         <div className="py-6">
@@ -235,7 +227,7 @@ export function Footer() {
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">
               <span>Built with autonomous AI systems</span>
               <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-[#C9A86A] rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                 <span>System Status: Operational</span>
               </div>
             </div>

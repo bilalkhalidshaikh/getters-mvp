@@ -55,7 +55,7 @@ export function Navigation() {
                 height={40}
                 className="w-10 h-10 transition-transform group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#C9A86A]/20 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <span className="text-xl font-bold text-foreground">Getters</span>
           </Link>
@@ -69,7 +69,7 @@ export function Navigation() {
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C9A86A] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </div>
@@ -91,7 +91,7 @@ export function Navigation() {
                     onClick={() => handleLanguageSwitch("en")}
                     className={`w-full px-4 py-2 text-left text-sm transition-colors ${
                       language === "en"
-                        ? "bg-[#C9A86A]/20 text-[#C9A86A] font-medium"
+                        ? "bg-primary/20 text-primary font-medium"
                         : "text-muted-foreground hover:text-foreground hover:bg-card/50"
                     }`}
                   >
@@ -101,7 +101,7 @@ export function Navigation() {
                     onClick={() => handleLanguageSwitch("it")}
                     className={`w-full px-4 py-2 text-left text-sm transition-colors ${
                       language === "it"
-                        ? "bg-[#C9A86A]/20 text-[#C9A86A] font-medium"
+                        ? "bg-primary/20 text-primary font-medium"
                         : "text-muted-foreground hover:text-foreground hover:bg-card/50"
                     }`}
                   >
@@ -114,7 +114,7 @@ export function Navigation() {
             <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-card/50">
               {translations.nav?.audit || "Get AI Audit"}
             </Button>
-            <Button className="bg-[#C9A86A] hover:bg-[#C9A86A]/90 text-background font-medium transition-all duration-200 shadow-lg hover:shadow-[#C9A86A]/50 hover:shadow-lg">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-all duration-200 shadow-lg hover:shadow-primary/50 hover:shadow-lg">
               {translations.nav?.home === "Home" ? "Start Project" : "Inizia Progetto"}
             </Button>
           </div>
@@ -147,7 +147,7 @@ export function Navigation() {
                     onClick={() => handleLanguageSwitch("en")}
                     className={`flex-1 px-3 py-2 rounded text-sm transition-all ${
                       language === "en"
-                        ? "bg-[#C9A86A]/20 text-[#C9A86A] font-medium"
+                        ? "bg-primary/20 text-primary font-medium"
                         : "bg-card/50 text-muted-foreground hover:text-foreground"
                     }`}
                   >
@@ -157,7 +157,7 @@ export function Navigation() {
                     onClick={() => handleLanguageSwitch("it")}
                     className={`flex-1 px-3 py-2 rounded text-sm transition-all ${
                       language === "it"
-                        ? "bg-[#C9A86A]/20 text-[#C9A86A] font-medium"
+                        ? "bg-primary/20 text-primary font-medium"
                         : "bg-card/50 text-muted-foreground hover:text-foreground"
                     }`}
                   >
@@ -170,7 +170,7 @@ export function Navigation() {
                 <Button variant="ghost" className="w-full justify-start text-muted-foreground hover:text-foreground">
                   {translations.nav?.audit || "Get AI Audit"}
                 </Button>
-                <Button className="w-full bg-[#C9A86A] hover:bg-[#C9A86A]/90 text-background font-medium">
+                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
                   {translations.nav?.home === "Home" ? "Start Project" : "Inizia Progetto"}
                 </Button>
               </div>
