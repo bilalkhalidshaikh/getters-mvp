@@ -1,284 +1,175 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Badge } from "@/components/ui/badge"
-import { Mail, MapPin, Send, Sparkles, CheckCircle, ArrowRight } from "lucide-react"
 import { useLanguageContext } from "@/components/language-provider"
+import { IntelligentContactForm } from "@/components/intelligent-contact-form"
+import { Button } from "@/components/ui/button"
+
+function MailIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 7-10 5L2 7" />
+    </svg>
+  )
+}
+
+function MapPinIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  )
+}
+
+function CheckCircleIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+      <polyline points="22 4 12 14.01 9 11.01" />
+    </svg>
+  )
+}
+
+function ArrowRightIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12 5 19 12 12 19" />
+    </svg>
+  )
+}
 
 export function ContactSection() {
   const { translations, isLoaded } = useLanguageContext()
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    projectType: "",
-    message: "",
-  })
-  const [submitted, setSubmitted] = useState(false)
 
   if (!isLoaded) return null
 
-  const projectTypes = translations.services?.items?.map((s: any) => s.title) || [
-    "AI Agent Development",
-    "Process Automation",
-    "Data & Analytics",
-    "Full-Stack Engineering",
-    "Creative AI Solutions",
-  ]
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    try {
-      const response = await fetch("https://formsubmit.co/hello@getters.ai", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          projectType: formData.projectType,
-          message: formData.message,
-        }),
-      })
-
-      if (response.ok) {
-        setSubmitted(true)
-        setFormData({ name: "", email: "", company: "", projectType: "", message: "" })
-        setTimeout(() => setSubmitted(false), 5000)
-      }
-    } catch (error) {
-      console.error("Form submission error:", error)
-    }
-  }
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
-  }
+  const isItalian = translations.nav?.home === "Home" ? false : true
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-background to-background/50">
+    <section id="contact" className="relative py-24 md:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-primary mb-6 backdrop-blur-sm">
-            <Sparkles className="w-4 h-4 mr-2" />
-            {translations.audit?.title || "Get Started"}
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-balance mb-6">
-            {translations.audit?.title || "Get Your Free AI Audit"}
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            {isItalian ? "Inizia il Tuo Futuro Agentivo" : "Build Your Agentic Future"}
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            {translations.audit?.subtitle ||
-              "Discover how autonomous AI can transform your business. Let's discuss your unique challenges."}
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            {isItalian
+              ? "Parla con il nostro team di intelligenza per scoprire come gli agenti autonomi possono trasformare la tua organizzazione."
+              : "Talk to our intelligence team to discover how autonomous agents can transform your organization."}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card className="border-primary/20 bg-card/40 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-2xl">{translations.audit?.title || "Start Your AI Journey"}</CardTitle>
-                <CardDescription>
-                  {translations.audit?.subtitle || "Fill out the form below and we'll get back to you within 24 hours."}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                {submitted ? (
-                  <div className="flex flex-col items-center justify-center py-12 text-center">
-                    <CheckCircle className="w-16 h-16 text-primary mb-4" />
-                    <h3 className="text-xl font-bold text-foreground mb-2">Thank You!</h3>
-                    <p className="text-muted-foreground">
-                      We've received your request. Our team will contact you within 24 hours.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                          {translations.audit?.form?.name || "Full Name"} *
-                        </label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          placeholder="John Doe"
-                          required
-                          className="bg-background/50 border-primary/20 focus:border-primary/50 focus:ring-primary/20"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                          {translations.audit?.form?.email || "Email Address"} *
-                        </label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          placeholder="john@company.com"
-                          required
-                          className="bg-background/50 border-primary/20 focus:border-primary/50 focus:ring-primary/20"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                        {translations.audit?.form?.company || "Company Name"}
-                      </label>
-                      <Input
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        placeholder="Your Company"
-                        className="bg-background/50 border-primary/20 focus:border-primary/50 focus:ring-primary/20"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-3">
-                        {translations.audit?.form?.projectType || "Project Type"}
-                      </label>
-                      <div className="flex flex-wrap gap-2">
-                        {projectTypes.map((type: string) => (
-                          <Badge
-                            key={type}
-                            variant={formData.projectType === type ? "default" : "outline"}
-                            className={`cursor-pointer transition-all duration-200 ${
-                              formData.projectType === type
-                                ? "bg-primary text-primary-foreground border-primary"
-                                : "border-primary/20 hover:bg-primary/10 hover:border-primary/40 text-foreground"
-                            }`}
-                            onClick={() => setFormData((prev) => ({ ...prev, projectType: type }))}
-                          >
-                            {type}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                        {translations.audit?.form?.details || "Project Details"} *
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        placeholder="Tell us about your project, challenges, and goals..."
-                        rows={4}
-                        required
-                        className="bg-background/50 border-primary/20 focus:border-primary/50 focus:ring-primary/20 resize-none"
-                      />
-                    </div>
-
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-all duration-200 shadow-lg hover:shadow-primary/50 hover:shadow-xl"
-                    >
-                      {translations.audit?.form?.submit || "Get Free Audit"}
-                      <Send className="ml-2 w-5 h-5" />
-                    </Button>
-                  </form>
-                )}
-              </CardContent>
-            </Card>
+          <div className="lg:col-span-2 p-8 bg-card/40 border border-border/50 rounded glass-effect-dark">
+            <h3 className="text-2xl font-bold text-foreground mb-2">{isItalian ? "Contattaci" : "Get in Touch"}</h3>
+            <p className="text-muted-foreground mb-8">
+              {isItalian
+                ? "Seleziona il tuo profilo e il nostro team ti contatterà con la soluzione giusta."
+                : "Select your profile and our team will route you to the right solution."}
+            </p>
+            <IntelligentContactForm />
           </div>
 
           {/* Contact Info & Benefits */}
           <div className="space-y-6">
             {/* Contact Information */}
-            <Card className="border-primary/20 bg-card/40 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-xl">{translations.contact?.title || "Get in Touch"}</CardTitle>
-                <CardDescription>Multiple ways to reach our team</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Mail className="w-5 h-5 text-primary" />
+            <div className="p-6 bg-card/40 border border-border/50 rounded glass-effect-dark">
+              <h3 className="text-lg font-bold text-foreground mb-6">
+                {isItalian ? "Contatti Diretti" : "Direct Contact"}
+              </h3>
+
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="p-2 bg-accent/10 rounded flex-shrink-0">
+                    <MailIcon />
                   </div>
                   <div>
-                    <p className="font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">{translations.contact?.email || "hello@getters.ai"}</p>
+                    <p className="font-medium text-foreground text-sm">Email</p>
+                    <p className="text-sm text-muted-foreground">hello@getters.ai</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <MapPin className="w-5 h-5 text-primary" />
+
+                <div className="flex items-start space-x-3">
+                  <div className="p-2 bg-accent/10 rounded flex-shrink-0">
+                    <MapPinIcon />
                   </div>
                   <div>
-                    <p className="font-medium">{translations.contact?.locations?.[0]?.city || "Milan"}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {translations.contact?.locations?.[0]?.address || "Via della Moscova, Milan"}
+                    <p className="font-medium text-foreground text-sm">Milan, Italy</p>
+                    <p className="text-sm text-muted-foreground">Via della Moscova</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* What to Expect */}
+            <div className="p-6 bg-card/40 border border-border/50 rounded glass-effect-dark">
+              <h3 className="text-lg font-bold text-foreground mb-6">
+                {isItalian ? "Cosa Aspettarsi" : "What to Expect"}
+              </h3>
+
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircleIcon className="text-accent mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground text-sm">
+                      {isItalian ? "Risposta in 24 Ore" : "24-Hour Response"}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {isItalian
+                        ? "Ti contatteremo entro un giorno lavorativo"
+                        : "We'll respond within one business day"}
                     </p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
 
-            {/* What to Expect */}
-            <Card className="border-primary/20 bg-card/40 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-xl">What to Expect</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <CheckCircleIcon className="text-accent mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">24-Hour Response</p>
-                    <p className="text-sm text-muted-foreground">We'll get back to you within one business day</p>
+                    <p className="font-medium text-foreground text-sm">
+                      {isItalian ? "Consulenza Gratuita" : "Free Consultation"}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {isItalian
+                        ? "Sessione strategica di 30 minuti senza costi"
+                        : "30-minute strategy session at no cost"}
+                    </p>
                   </div>
                 </div>
+
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <CheckCircleIcon className="text-accent mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Free Consultation</p>
-                    <p className="text-sm text-muted-foreground">30-minute strategy session at no cost</p>
+                    <p className="font-medium text-foreground text-sm">
+                      {isItalian ? "Proposta Personalizzata" : "Custom Proposal"}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {isItalian
+                        ? "Soluzione su misura con timeline e prezzi chiari"
+                        : "Tailored solution with clear timeline"}
+                    </p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium">Custom Proposal</p>
-                    <p className="text-sm text-muted-foreground">Tailored solution with clear timeline and pricing</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
             {/* Quick CTA */}
-            <Card className="border-primary/20 bg-gradient-to-br from-primary/10 to-primary/5">
-              <CardContent className="p-6 text-center">
-                <h3 className="font-bold text-lg mb-2">Need Immediate Help?</h3>
-                <p className="text-sm text-muted-foreground mb-4">Schedule a call directly with our AI strategy team</p>
-                <Button
-                  variant="outline"
-                  className="w-full border-primary/30 hover:bg-primary/10 hover:border-primary/50 bg-transparent text-foreground"
-                >
-                  Book Strategy Call
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </CardContent>
-            </Card>
+            <div className="p-6 bg-gradient-accent border border-accent/30 rounded">
+              <h3 className="font-bold text-foreground mb-2">
+                {isItalian ? "Aiuto Immediato?" : "Need Immediate Help?"}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                {isItalian
+                  ? "Prenota una chiamata direttamente con il nostro team"
+                  : "Schedule a call with our intelligence team"}
+              </p>
+              <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium transition-smooth text-sm flex items-center justify-center gap-2">
+                {isItalian ? "Prenota Chiamata" : "Book Call"}
+                <ArrowRightIcon />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
